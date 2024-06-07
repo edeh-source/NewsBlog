@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -123,11 +123,11 @@ WSGI_APPLICATION = 'newspaper.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'emma',
-        'USER': 'postgres',
-        'PASSWORD': '1232478847',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
     
@@ -136,7 +136,7 @@ DATABASES = {
 
 
 
-DATABASES["default"] = dj_database_url.parse("postgres://newsdata_zv50_user:MotTLF7ziRYYEV9japuSLtEGUFdiiK7g@dpg-cph504i1hbls73bu2860-a.oregon-postgres.render.com/newsdata_zv50")
+
 
 
     
