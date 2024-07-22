@@ -218,7 +218,7 @@ class PostSearchView(ListView):
         return Post.objects.annotate(
             search=search_vector,
             rank=SearchRank(search_vector, search_query)
-        ).annotate(headline=search_headline).filter(search=search_query).order_by("-rank")
+        ).annotate(headline=search_headline).filter(search=search_query, active=True).order_by("-rank")
 
 
     def get_context_data(self, **kwargs):

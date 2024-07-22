@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh"]
 
 
 # Application definition
@@ -120,23 +120,21 @@ WSGI_APPLICATION = 'newspaper.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
-    }
-}
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': os.environ.get('DB_NAME'),
+        #'USER': os.environ.get('DB_USER'),
+        #'PASSWORD': os.environ.get('DB_PASSWORD'),
+        #'HOST': os.environ.get('DB_HOST'),
+        #'PORT': os.environ.get('DB_PORT'),
+    #}
+#}
     
         
 
-
 DATABASES = {
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
         default='postgresql://postgres:1232478847@localhost:5432/emma',
         conn_max_age=600
     )

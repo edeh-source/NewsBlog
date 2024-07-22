@@ -108,7 +108,7 @@
                 {% for posts_trend in post_trend %}
                 <div class="col-lg-4">
                     <div class="post-entry-1 lg">
-                        <a href="single-post.html"><img src="{{ posts_trend.image.url }}" alt="" class="img-fluid"></a>
+                        <a href="{{ posts_trend.get_absolute_url }}"><img src="{{ posts_trend.image.url }}" alt="" class="img-fluid"></a>
                         <div class="post-meta"><span class="date">{{ posts_trend.category.name }}</span> <span class="mx-1">&bullet;</span> <span>{{ posts_trend.created|timesince }} ago</span></div>
                         <h2><a href="{{ posts_trend.get_absolute_url }}">{{ posts_trend.name }}</a></h2>
                         <p class="mb-4 d-block">{{ posts_trend.text|safe|truncatewords:40 }}</p>
