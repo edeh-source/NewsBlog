@@ -237,7 +237,7 @@ def most_popular_post(request):
 
 
 def get_one_culture(request):
-    culture_category = Category.objects.get(name='Culture', None)
+    culture_category = Category.objects.get(name='Culture')
     post_culture = Post.objects.filter(category=culture_category, active=True).order_by('-publish')[:1]
     return {'post_culture': post_culture, 'culture_category': culture_category }
 
