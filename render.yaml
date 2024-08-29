@@ -11,7 +11,7 @@ services:
     runtime: python
     buildCommand: "./build.sh"
 
-    startCommand: "uvicorn mysite.asgi:application --host 0.0.0.0 --port $PORT"
+    startCommand: "uvicorn newspaper.asgi:application --host 0.0.0.0 --port $PORT"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
