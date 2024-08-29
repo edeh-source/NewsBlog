@@ -10,12 +10,10 @@ services:
     name: newspaper
     runtime: python
     buildCommand: "./build.sh"
-
-    startCommand: "python -m gunicorn newspaper.asgi:application -k uvicorn.workers.UvicornWorker"
-    envVars:
+    startCommand: "python -m waitress --port=$PORT newspaper.asgi:application"   envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: emma
+          name: mysitedb
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
