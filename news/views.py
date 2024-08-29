@@ -248,7 +248,7 @@ def all_posts(request):
     
 
 def get_one_trending_news(request):
-    trend_category = Category.objects.get(name='Trending News' None)
+    trend_category = Category.objects.get(name='Trending News')
     post_trend = Post.objects.filter(category=trend_category, active=True).order_by('-publish')[:1]
     return {'post_trend': post_trend, 'trend_category': trend_category }
 
