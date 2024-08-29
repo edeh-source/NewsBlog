@@ -2,7 +2,7 @@ databases:
   - name: emma
     plan: free
     databaseName: emma
-    user: postgres
+    user: mysite
 
 services:
   - type: web
