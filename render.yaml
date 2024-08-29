@@ -7,10 +7,12 @@ databases:
 services:
   - type: web
     plan: free
-    name: newspaper
+    name: mysite
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "python -m waitress newspaper.asgi:application" 
+
+    startCommand: "python -m waitress --port=$PORT newspaper.asgi:application"
+    envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: mysitedb
