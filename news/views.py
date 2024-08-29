@@ -235,7 +235,7 @@ def most_popular_post(request):
     most_popular_posts = list(posts)
     return {'most_popular_posts': most_popular_posts}
 
-"""
+
 def get_one_culture(request):
     culture_category = Category.objects.get(name='Culture', None)
     post_culture = Post.objects.filter(category=culture_category, active=True).order_by('-publish')[:1]
@@ -309,7 +309,7 @@ def trending_news(request):
 def get_latest_posts(request):
     all_latest_post = Post.objects.filter(active=True).order_by('-publish')[:5]
     return {'all_latest_post': all_latest_post}       
-"""
+
     
 
 
